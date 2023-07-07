@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Random Category Menu Page</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+function getRandomCategory() {
+  var categories = ["Lunch", "Dinner", "Sushi", "Pizza", "Dessert"];
+  var randomIndex = Math.floor(Math.random() * categories.length);
+  return categories[randomIndex];
+}
+
+$(document).ready(function() {
+  $("#specialsTile").click(function() {
+    var randomCategory = getRandomCategory();
+    window.location.href = "/category/" + randomCategory;
+  });
+});
+</script>
+</head>
+<body>
+<h1>Random Category Menu Page</h1>
+<a href="/home" id="homeTile">Home</a>
+<a href="/menu" id="menuTile">Menu</a>
+<a href="/specials" id="specialsTile">Specials</a>
+</body>
+</html>
